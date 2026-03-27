@@ -1,11 +1,7 @@
 const container = document.querySelector('.container');
 const newGrid = document.querySelector('.newGrid');
 
-
-
 container.style.cssText = "display: flex; flex-wrap: wrap; background-color: dodgerblue; padding: 10px;";
-
-
 
  
 for (let i = 0; i < 256; i++) {
@@ -21,13 +17,10 @@ for (let i = 0; i < 256; i++) {
     }
 
 
-
-
 newGrid.addEventListener('click', () => {
     createGrid();
     
 })
-
 
 function createGrid() {
     container.replaceChildren();

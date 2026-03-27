@@ -35,13 +35,13 @@ function createGrid() {
     console.log(userInput);
 
     let convertedTotal = Number(userInput);
-    const totalGrid = convertedTotal + convertedTotal;
+    const totalGrid = convertedTotal * convertedTotal;
     console.log(totalGrid);
-    let size = 100 / totalGrid + '%'; 
-    console.log(size);
+ 
 
 for (let i = 0; i < totalGrid; i++) {
     const grid = document.createElement('div')
+    let size = 100 / convertedTotal + '%'; 
     grid.style.cssText = `box-sizing: border-box; width: ${size}; aspect-ratio: 1/1; background-color: #f1f1f1; border: 1px solid black; font-size: 30px; text-align: center;`
     container.appendChild(grid);
 

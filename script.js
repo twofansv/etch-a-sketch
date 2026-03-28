@@ -46,9 +46,12 @@ for (let i = 0; i < totalGrid; i++) {
     grid.style.cssText = `box-sizing: border-box; width: ${size}; aspect-ratio: 1/1; background-color: #f1f1f1; border: 1px solid black; font-size: 30px; text-align: center;`
     container.appendChild(grid);
 
+    let darken = 0;
+
     grid.addEventListener('mouseover', () => {
 
-        grid.style.cssText = `box-sizing: border-box; width: ${size}; aspect-ratio: 1/1; background-color: rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}); border: 1px solid black; font-size: 30px; text-align: center;`
+        grid.style.cssText = `opacity: ${1 - (darken * 0.1)}; box-sizing: border-box; width: ${size}; aspect-ratio: 1/1; background-color: rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}); border: 1px solid black; font-size: 30px; text-align: center;`
+        darken++;
         });
     }
 }

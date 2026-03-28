@@ -3,8 +3,8 @@ const newGrid = document.querySelector('.newGrid');
 
 container.style.cssText = "display: flex; flex-wrap: wrap; background-color: black; padding: 10px;";
 
-function getRandomNumber(rainbow){
-        return rainbow = Math.floor(Math.random() * 256);
+function getRandomNumber(){
+        return Math.floor(Math.random() * 256);
 };
 
  
@@ -30,10 +30,14 @@ newGrid.addEventListener('click', () => {
     
 })
 
-function createGrid() {
+
+function createGrid(userInput) {
     container.replaceChildren();
-    let userInput = prompt('Create New Grid\nHow many squares? : ');
+    userInput = prompt('Create New Grid\nHow many squares? : ');
     console.log(userInput);
+    while (userInput >= 101) {
+        userInput = prompt('Not exceeding 100.\nKindly enter again: ')
+    }
 
     let convertedTotal = Number(userInput);
     const totalGrid = convertedTotal * convertedTotal;

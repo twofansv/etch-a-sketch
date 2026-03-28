@@ -1,11 +1,12 @@
 const container = document.querySelector('.container');
 const newGrid = document.querySelector('.newGrid');
 
-container.style.cssText = "display: flex; flex-wrap: wrap; background-color: dodgerblue; padding: 10px;";
+container.style.cssText = "display: flex; flex-wrap: wrap; background-color: black; padding: 10px;";
 
 function getRandomNumber(rainbow){
         return rainbow = Math.floor(Math.random() * 256);
 };
+
  
 for (let i = 0; i < 256; i++) {
 
@@ -14,12 +15,13 @@ for (let i = 0; i < 256; i++) {
     container.appendChild(grid);
 
     
+    let darken = 0;
+
 
     grid.addEventListener('mouseover', () => {
-
-        grid.style.cssText = `box-sizing: border-box; width: 6.25%; aspect-ratio: 1/1; background-color: rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}); border: 1px solid black; font-size: 30px; text-align: center;`
-
-        });
+        grid.style.cssText = `opacity: ${1 - (darken * 0.1)}; background-color: rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}); box-sizing: border-box; width: 6.25%; aspect-ratio: 1/1; border: 1px solid black; font-size: 30px; text-align: center;`
+        darken++;
+    });
 }
 
 
@@ -45,8 +47,6 @@ for (let i = 0; i < totalGrid; i++) {
     container.appendChild(grid);
 
     grid.addEventListener('mouseover', () => {
-        let rainbow = Math.floor(Math.random(), Math.random(), Math.random);
-        console.log(rainbow);
 
         grid.style.cssText = `box-sizing: border-box; width: ${size}; aspect-ratio: 1/1; background-color: rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}); border: 1px solid black; font-size: 30px; text-align: center;`
         });
